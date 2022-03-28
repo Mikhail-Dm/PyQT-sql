@@ -85,26 +85,6 @@ def process_message(message, names, listen_socks):
             f'отправка сообщения невозможна.')
 
 
-@log
-def arg_parser():
-    """Парсер аргументов коммандной строки"""
-    parser = argparse.ArgumentParser()
-    parser.add_argument('-p', default=DEFAULT_PORT, type=int, nargs='?')
-    parser.add_argument('-a', default='', nargs='?')
-    namespace = parser.parse_args(sys.argv[1:])
-    listen_address = namespace.a
-    listen_port = namespace.p
-
-    # проверка получения корректного номера порта для работы сервера.
-    if not 1023 < listen_port < 65536:
-        LOGGER.critical(
-            f'Попытка запуска сервера с указанием неподходящего порта {listen_port}. '
-            f'Допустимы адреса с 1024 до 65535.')
-        sys.exit(1)
-
-    return listen_address, listen_port
-
-
 def main():
     """
     Загрузка параметров командной строки, если нет параметров, то задаём значения по умоланию
@@ -172,6 +152,26 @@ def main():
                 clients.remove(names[i[DESTINATION]])
                 del names[i[DESTINATION]]
         messages.clear()
+
+
+@log
+def arg_parser():
+    """Парсер аргументов коммандной строки"""
+    parser = argparse.ArgumentParser()
+    parser.add_argument('-p', default=DEFAULT_PORT, type=int, nargs='?')
+    parser.add_argument('-a', default='', nargs='?')
+    namespace = parser.parse_args(sys.argv[1:])
+    listen_address = namespace.a
+    listen_port = namespace.p
+
+    # проверка получения корректного номера порта для работы сервера.
+    if not 1023 < listen_port < 65536:
+        LOGGER.critical(
+            f'Попытка запуска сервера с указанием неподходящего порта {listen_port}. '
+            f'Допустимы адреса с 1024 до 65535.')
+        sys.exit(1)
+
+    return listen_address, listen_port
 
 
 if __name__ == '__main__':
