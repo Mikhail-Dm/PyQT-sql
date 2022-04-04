@@ -289,3 +289,56 @@ test2
 2022-03-28 11:32:05,999 - DEBUG - decos - Была вызвана функция process_response_ans c параметрами ({'response': 200},), {}. Вызов из модуля __main__ 
 2022-03-28 11:32:05,999 - INFO - client - Установлено соединение с сервером. Ответ сервера: 200 : OK 
 2022-03-28 11:32:05,999 - DEBUG - client - Запущены процессы 
+2022-04-03 17:14:01,316 - DEBUG - decos - Была вызвана функция arg_parser c параметрами (), {}. Вызов из модуля __main__ 
+2022-04-03 17:14:01,317 - INFO - client - Запущен клиент с параметрами: адрес сервера: 127.0.0.1, порт: 7777, имя пользователя: test1 
+2022-04-03 17:14:01,317 - DEBUG - client - Сформировано presence сообщение для пользователя test1 
+2022-04-03 17:14:01,317 - DEBUG - decos - Была вызвана функция create_presence c параметрами ('test1',), {}. Вызов из модуля __main__ 
+2022-04-03 17:14:01,317 - DEBUG - decos - Была вызвана функция send_message c параметрами (<socket.socket fd=4, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 43100), raddr=('127.0.0.1', 7777)>, {'action': 'presence', 'time': 1648995241.317493, 'user': {'account_name': 'test1'}}), {}. Вызов из модуля common.utils 
+2022-04-03 17:14:01,490 - DEBUG - decos - Была вызвана функция arg_parser c параметрами (), {}. Вызов из модуля __main__ 
+2022-04-03 17:14:01,491 - INFO - client - Запущен клиент с параметрами: адрес сервера: 127.0.0.1, порт: 7777, имя пользователя: test2 
+2022-04-03 17:14:01,491 - DEBUG - client - Сформировано presence сообщение для пользователя test2 
+2022-04-03 17:14:01,491 - DEBUG - decos - Была вызвана функция create_presence c параметрами ('test2',), {}. Вызов из модуля __main__ 
+2022-04-03 17:14:01,491 - DEBUG - decos - Была вызвана функция send_message c параметрами (<socket.socket fd=4, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 43102), raddr=('127.0.0.1', 7777)>, {'action': 'presence', 'time': 1648995241.4912355, 'user': {'account_name': 'test2'}}), {}. Вызов из модуля common.utils 
+2022-04-03 17:14:01,492 - DEBUG - decos - Была вызвана функция get_message c параметрами (<socket.socket fd=4, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 43100), raddr=('127.0.0.1', 7777)>,), {}. Вызов из модуля common.utils 
+2022-04-03 17:14:01,492 - DEBUG - client - Разбор приветственного сообщения от сервера: {'response': 200} 
+2022-04-03 17:14:01,492 - DEBUG - decos - Была вызвана функция process_response_ans c параметрами ({'response': 200},), {}. Вызов из модуля __main__ 
+2022-04-03 17:14:01,492 - INFO - client - Установлено соединение с сервером. Ответ сервера: 200 : OK 
+2022-04-03 17:14:01,493 - DEBUG - client - Запущены процессы 
+2022-04-03 17:14:01,493 - DEBUG - decos - Была вызвана функция get_message c параметрами (<socket.socket fd=4, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 43102), raddr=('127.0.0.1', 7777)>,), {}. Вызов из модуля common.utils 
+2022-04-03 17:14:01,493 - DEBUG - client - Разбор приветственного сообщения от сервера: {'response': 200} 
+2022-04-03 17:14:01,493 - DEBUG - decos - Была вызвана функция process_response_ans c параметрами ({'response': 200},), {}. Вызов из модуля __main__ 
+2022-04-03 17:14:01,493 - INFO - client - Установлено соединение с сервером. Ответ сервера: 200 : OK 
+2022-04-03 17:14:01,493 - DEBUG - client - Запущены процессы 
+2022-04-03 17:57:49,652 - DEBUG - decos - Была вызвана функция arg_parser c параметрами (), {}. Вызов из модуля __main__ 
+2022-04-03 17:57:49,652 - INFO - client - Запущен клиент с параметрами: адрес сервера: 127.0.0.1, порт: 7777, имя пользователя: test1 
+2022-04-03 17:57:50,187 - DEBUG - decos - Была вызвана функция arg_parser c параметрами (), {}. Вызов из модуля __main__ 
+2022-04-03 17:57:50,187 - INFO - client - Запущен клиент с параметрами: адрес сервера: 127.0.0.1, порт: 7777, имя пользователя: test2 
+2022-04-03 18:01:04,675 - DEBUG - decos - Была вызвана функция arg_parser c параметрами (), {}. Вызов из модуля __main__ 
+2022-04-03 18:01:04,676 - DEBUG - decos - Была вызвана функция create_presence c параметрами ('test1',), {}. Вызов из модуля __main__ 
+2022-04-03 18:01:04,676 - DEBUG - decos - Была вызвана функция send_message c параметрами (<socket.socket fd=4, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 43108), raddr=('127.0.0.1', 7777)>, {'action': 'presence', 'time': 1648998064.67624, 'user': {'account_name': 'test1'}}), {}. Вызов из модуля common.utils 
+2022-04-03 18:01:04,691 - DEBUG - decos - Была вызвана функция get_message c параметрами (<socket.socket fd=4, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 43108), raddr=('127.0.0.1', 7777)>,), {}. Вызов из модуля common.utils 
+2022-04-03 18:01:04,691 - DEBUG - decos - Была вызвана функция process_response_ans c параметрами ({'response': 200},), {}. Вызов из модуля __main__ 
+2022-04-03 18:01:04,971 - DEBUG - decos - Была вызвана функция arg_parser c параметрами (), {}. Вызов из модуля __main__ 
+2022-04-03 18:01:04,972 - DEBUG - decos - Была вызвана функция create_presence c параметрами ('test2',), {}. Вызов из модуля __main__ 
+2022-04-03 18:01:04,972 - DEBUG - decos - Была вызвана функция send_message c параметрами (<socket.socket fd=4, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 43110), raddr=('127.0.0.1', 7777)>, {'action': 'presence', 'time': 1648998064.9724927, 'user': {'account_name': 'test2'}}), {}. Вызов из модуля common.utils 
+2022-04-03 18:01:04,973 - DEBUG - decos - Была вызвана функция get_message c параметрами (<socket.socket fd=4, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 43110), raddr=('127.0.0.1', 7777)>,), {}. Вызов из модуля common.utils 
+2022-04-03 18:01:04,973 - DEBUG - decos - Была вызвана функция process_response_ans c параметрами ({'response': 200},), {}. Вызов из модуля __main__ 
+2022-04-03 18:03:32,201 - DEBUG - decos - Была вызвана функция arg_parser c параметрами (), {}. Вызов из модуля __main__ 
+2022-04-03 18:03:57,355 - DEBUG - decos - Была вызвана функция arg_parser c параметрами (), {}. Вызов из модуля __main__ 
+2022-04-03 18:03:57,355 - INFO - client - Запущен клиент с параметрами: адрес сервера: 127.0.0.1, порт: 7777, имя пользователя: test1 
+2022-04-03 18:03:57,810 - DEBUG - decos - Была вызвана функция arg_parser c параметрами (), {}. Вызов из модуля __main__ 
+2022-04-03 18:03:57,810 - INFO - client - Запущен клиент с параметрами: адрес сервера: 127.0.0.1, порт: 7777, имя пользователя: test2 
+2022-04-03 18:04:36,049 - DEBUG - decos - Была вызвана функция arg_parser c параметрами (), {}. Вызов из модуля __main__ 
+2022-04-03 18:04:36,049 - INFO - client - Запущен клиент с параметрами: адрес сервера: 127.0.0.1, порт: 7777, имя пользователя: test1 
+2022-04-03 18:04:36,354 - DEBUG - decos - Была вызвана функция arg_parser c параметрами (), {}. Вызов из модуля __main__ 
+2022-04-03 18:04:36,354 - INFO - client - Запущен клиент с параметрами: адрес сервера: 127.0.0.1, порт: 7777, имя пользователя: test2 
+2022-04-03 18:10:41,121 - DEBUG - decos - Была вызвана функция arg_parser c параметрами (), {}. Вызов из модуля __main__ 
+2022-04-03 18:10:41,121 - DEBUG - decos - Была вызвана функция create_presence c параметрами ('test1',), {}. Вызов из модуля __main__ 
+2022-04-03 18:10:41,121 - DEBUG - decos - Была вызвана функция send_message c параметрами (<socket.socket fd=4, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 43120), raddr=('127.0.0.1', 7777)>, {'action': 'presence', 'time': 1648998641.1214466, 'user': {'account_name': 'test1'}}), {}. Вызов из модуля common.utils 
+2022-04-03 18:10:41,122 - DEBUG - decos - Была вызвана функция get_message c параметрами (<socket.socket fd=4, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 43120), raddr=('127.0.0.1', 7777)>,), {}. Вызов из модуля common.utils 
+2022-04-03 18:10:41,122 - DEBUG - decos - Была вызвана функция process_response_ans c параметрами ({'response': 200},), {}. Вызов из модуля __main__ 
+2022-04-03 18:10:41,497 - DEBUG - decos - Была вызвана функция arg_parser c параметрами (), {}. Вызов из модуля __main__ 
+2022-04-03 18:10:41,498 - DEBUG - decos - Была вызвана функция create_presence c параметрами ('test2',), {}. Вызов из модуля __main__ 
+2022-04-03 18:10:41,498 - DEBUG - decos - Была вызвана функция send_message c параметрами (<socket.socket fd=4, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 43122), raddr=('127.0.0.1', 7777)>, {'action': 'presence', 'time': 1648998641.4981892, 'user': {'account_name': 'test2'}}), {}. Вызов из модуля common.utils 
+2022-04-03 18:10:41,999 - DEBUG - decos - Была вызвана функция get_message c параметрами (<socket.socket fd=4, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 43122), raddr=('127.0.0.1', 7777)>,), {}. Вызов из модуля common.utils 
+2022-04-03 18:10:42,000 - DEBUG - decos - Была вызвана функция process_response_ans c параметрами ({'response': 200},), {}. Вызов из модуля __main__ 
