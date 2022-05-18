@@ -50,7 +50,6 @@ class ServerMaker(type):
             else:
                 # Раз функция разбираем код, получая используемые методы и атрибуты.
                 for i in ret:
-                    print(i)
                     # i - Instruction(opname='LOAD_GLOBAL', opcode=116, arg=9, argval='send_message',
                     # argrepr='send_message', offset=308, starts_line=201, is_jump_target=False)
                     # opname - имя для операции
@@ -66,13 +65,13 @@ class ServerMaker(type):
                         if i.argval not in attrs:
                             # заполняем список атрибутами, использующимися в функциях класса
                             attrs.append(i.argval)
-        print(20*'-', 'methods', 20*'-')
+        print(20 * '-', 'methods', 20 * '-')
         pprint(methods)
-        print(20*'-', 'methods_2', 20*'-')
+        print(20 * '-', 'methods_2', 20 * '-')
         pprint(methods_2)
-        print(20*'-', 'attrs', 20*'-')
+        print(20 * '-', 'attrs', 20 * '-')
         pprint(attrs)
-        print(50*'-')
+        print(50 * '-')
         # Если обнаружено использование недопустимого метода connect, вызываем исключение:
         if 'connect' in methods:
             raise TypeError('Использование метода connect недопустимо в серверном классе')

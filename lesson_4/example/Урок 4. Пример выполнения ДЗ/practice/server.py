@@ -246,6 +246,8 @@ def main():
         config['SETTINGS']['Default_port'], config['SETTINGS']['Listen_Address'])
 
     # Инициализация базы данных
+    print(config['SETTINGS']['Database_path'])
+    print(config['SETTINGS']['Database_file'])
     database = ServerStorage(
         os.path.join(
             config['SETTINGS']['Database_path'],

@@ -1,19 +1,3 @@
-"""
-    1. Начать реализацию класса «Хранилище» для серверной стороны. Хранение необходимо осуществлять в базе данных.
-        В качестве СУБД использовать sqlite. Для взаимодействия с БД можно применять ORM.
-        Опорная схема базы данных:
-            На стороне сервера БД содержит следующие таблицы:
-                a) клиент:
-                    * логин;
-                    * информация.
-                b) историяклиента:
-                    * время входа;
-                    * ip-адрес.
-                c) списокконтактов (составляется на основании выборки всех записей с id_владельца):
-                    * id_владельца;
-                    * id_клиента.
-"""
-
 import datetime
 from pprint import pprint
 from sqlalchemy import create_engine, Table, Column, Integer, String, DateTime, ForeignKey
@@ -21,7 +5,7 @@ from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy.orm import sessionmaker
 
 
-class ServerBase:
+class ServerStorage:
     Base = declarative_base()
 
     class AllUsers(Base):
@@ -31,6 +15,7 @@ class ServerBase:
         last_connection = Column(DateTime)
 
         def __init__(self, login):
+            self.id = None
             self.login = login
             self.last_connection = datetime.datetime.now()
 
@@ -64,8 +49,30 @@ class ServerBase:
             self.port = port
             self.last_connection = last_connection
 
-    def __init__(self):
-        self.engine = create_engine('sqlite:///server_database.db3', echo=False, pool_recycle=7200)
+    class UsersContacts(Base):
+        __tablename__ = 'user_contacts'
+        id = Column(Integer, primary_key=True)
+        user = Column(String, ForeignKey('all_users.login'))
+        contact = Column(String, ForeignKey('all_users.login'))
+
+        def __init__(self, user, contact):
+            self.user = user
+            self.contact = contact
+
+    class UsersHistory(Base):
+        __tablename__ = 'users_history'
+        id = Column(Integer, primary_key=True)
+        user = Column(String, ForeignKey('all_users.login'))
+        sent = Column('sent', Integer)
+        accepted = Column('accepted', Integer)
+
+        def __init__(self, user, sent, accepted):
+            self.user = user
+            self.sent = sent
+            self.accepted = accepted
+
+    def __init__(self, path):
+        self.engine = create_engine(f'sqlite:///{path}', echo=False, pool_recycle=7200)
 
         self.Base.metadata.create_all(self.engine)
         Session = sessionmaker(bind=self.engine)
@@ -137,9 +144,78 @@ class ServerBase:
             query = query.filter(self.AllUsers.login == username)
         return query.all()
 
+    # Функция фиксирует передачу сообщения и делает соответствующие отметки в БД
+    def process_message(self, sender, recipient):
+        # Получаем ID отправителя и получателя
+        sender = self.session.query(self.AllUsers).filter_by(name=sender).first().id
+        recipient = self.session.query(self.AllUsers).filter_by(name=recipient).first().id
+        # Запрашиваем строки из истории и увеличиваем счётчики
+        sender_row = self.session.query(self.UsersHistory).filter_by(user=sender).first()
+        sender_row.sent += 1
+        recipient_row = self.session.query(self.UsersHistory).filter_by(user=recipient).first()
+        recipient_row.accepted += 1
+
+        self.session.commit()
+
+    # Функция добавляет контакт для пользователя.
+    def add_contact(self, user, contact):
+        # Получаем ID пользователей
+        user = self.session.query(self.AllUsers).filter_by(name=user).first()
+        contact = self.session.query(self.AllUsers).filter_by(name=contact).first()
+
+        # Проверяем что не дубль и что контакт может существовать (полю пользователь мы доверяем)
+        if not contact or self.session.query(self.UsersContacts).filter_by(user=user.id, contact=contact.id).count():
+            return
+
+        # Создаём объект и заносим его в базу
+        contact_row = self.UsersContacts(user.id, contact.id)
+        self.session.add(contact_row)
+        self.session.commit()
+
+    # Функция удаляет контакт из базы данных
+    def remove_contact(self, user, contact):
+        # Получаем ID пользователей
+        user = self.session.query(self.AllUsers).filter_by(name=user).first()
+        contact = self.session.query(self.AllUsers).filter_by(name=contact).first()
+
+        # Проверяем что контакт может существовать (полю пользователь мы доверяем)
+        if not contact:
+            return
+
+        # Удаляем требуемое
+        print(self.session.query(self.UsersContacts).filter(
+            self.UsersContacts.user == user.id,
+            self.UsersContacts.contact == contact.id
+        ).delete())
+        self.session.commit()
+
+    # Функция возвращает список контактов пользователя.
+    def get_contacts(self, username):
+        # Запрашиваем указанного пользователя
+        user = self.session.query(self.AllUsers).filter_by(name=username).one()
+
+        # Запрашиваем его список контактов
+        query = self.session.query(self.UsersContacts, self.AllUsers.name). \
+            filter_by(user=user.id). \
+            join(self.AllUsers, self.UsersContacts.contact == self.AllUsers.id)
+
+        # выбираем только имена пользователей и возвращаем их.
+        return [contact[1] for contact in query.all()]
+
+    # Функция возвращает количество переданных и полученных сообщений
+    def message_history(self):
+        query = self.session.query(
+            self.AllUsers.login,
+            self.AllUsers.last_connection,
+            self.UsersHistory.sent,
+            self.UsersHistory.accepted
+        ).join(self.AllUsers)
+        # Возвращаем список кортежей
+        return query.all()
+
 
 if __name__ == '__main__':
-    db = ServerBase()
+    db = ServerStorage('server_base.db3')
     db.user_login('client_1', '192.168.1.4', 8888)
     db.user_login('client_2', '192.168.1.5', 7777)
 
@@ -172,3 +248,10 @@ if __name__ == '__main__':
     print('*' * 50 + '\nНиже все пользователи:')
     pprint(db.users_list())
     print('*' * 50 + '\n')
+
+    db.add_contact('test2', 'test1')
+    db.add_contact('test1', 'test3')
+    db.add_contact('test1', 'test6')
+    db.remove_contact('test1', 'test3')
+    db.process_message('McG2', '1111')
+    pprint(db.message_history())

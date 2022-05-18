@@ -1,24 +1,13 @@
-2022-04-03 17:13:53,020 - DEBUG - decos - Была вызвана функция arg_parser c параметрами (), {}. Вызов из модуля __main__ 
-2022-04-03 17:14:00,359 - DEBUG - decos - Была вызвана функция arg_parser c параметрами (), {}. Вызов из модуля __main__ 
-2022-04-03 17:14:01,492 - DEBUG - decos - Была вызвана функция get_message c параметрами (<socket.socket fd=5, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 7777), raddr=('127.0.0.1', 43100)>,), {}. Вызов из модуля common.utils 
-2022-04-03 17:14:01,493 - DEBUG - decos - Была вызвана функция send_message c параметрами (<socket.socket fd=5, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 7777), raddr=('127.0.0.1', 43100)>, {'response': 200}), {}. Вызов из модуля common.utils 
-2022-04-03 17:14:01,493 - DEBUG - decos - Была вызвана функция get_message c параметрами (<socket.socket fd=6, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 7777), raddr=('127.0.0.1', 43102)>,), {}. Вызов из модуля common.utils 
-2022-04-03 17:14:01,493 - DEBUG - decos - Была вызвана функция send_message c параметрами (<socket.socket fd=6, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 7777), raddr=('127.0.0.1', 43102)>, {'response': 200}), {}. Вызов из модуля common.utils 
-2022-04-03 17:59:30,672 - DEBUG - decos - Была вызвана функция arg_parser c параметрами (), {}. Вызов из модуля __main__ 
-2022-04-03 18:00:55,845 - DEBUG - decos - Была вызвана функция arg_parser c параметрами (), {}. Вызов из модуля __main__ 
-2022-04-03 18:01:04,151 - DEBUG - decos - Была вызвана функция arg_parser c параметрами (), {}. Вызов из модуля __main__ 
-2022-04-03 18:01:04,677 - DEBUG - decos - Была вызвана функция get_message c параметрами (<socket.socket fd=5, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 7777), raddr=('127.0.0.1', 43108)>,), {}. Вызов из модуля common.utils 
-2022-04-03 18:01:04,677 - DEBUG - decos - Была вызвана функция send_message c параметрами (<socket.socket fd=5, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 7777), raddr=('127.0.0.1', 43108)>, {'response': 200}), {}. Вызов из модуля common.utils 
-2022-04-03 18:01:04,972 - DEBUG - decos - Была вызвана функция get_message c параметрами (<socket.socket fd=6, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 7777), raddr=('127.0.0.1', 43110)>,), {}. Вызов из модуля common.utils 
-2022-04-03 18:01:04,972 - DEBUG - decos - Была вызвана функция send_message c параметрами (<socket.socket fd=6, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 7777), raddr=('127.0.0.1', 43110)>, {'response': 200}), {}. Вызов из модуля common.utils 
-2022-04-03 18:03:50,493 - DEBUG - decos - Была вызвана функция arg_parser c параметрами (), {}. Вызов из модуля __main__ 
-2022-04-03 18:03:56,967 - DEBUG - decos - Была вызвана функция arg_parser c параметрами (), {}. Вызов из модуля __main__ 
-2022-04-03 18:04:27,157 - DEBUG - decos - Была вызвана функция arg_parser c параметрами (), {}. Вызов из модуля __main__ 
-2022-04-03 18:04:35,600 - DEBUG - decos - Была вызвана функция arg_parser c параметрами (), {}. Вызов из модуля __main__ 
-2022-04-03 18:10:25,054 - DEBUG - decos - Была вызвана функция arg_parser c параметрами (), {}. Вызов из модуля __main__ 
-2022-04-03 18:10:40,680 - DEBUG - decos - Была вызвана функция arg_parser c параметрами (), {}. Вызов из модуля __main__ 
-2022-04-03 18:10:41,121 - DEBUG - decos - Была вызвана функция get_message c параметрами (<socket.socket fd=5, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 7777), raddr=('127.0.0.1', 43120)>,), {}. Вызов из модуля common.utils 
-2022-04-03 18:10:41,121 - DEBUG - decos - Была вызвана функция send_message c параметрами (<socket.socket fd=5, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 7777), raddr=('127.0.0.1', 43120)>, {'response': 200}), {}. Вызов из модуля common.utils 
-2022-04-03 18:10:41,999 - DEBUG - decos - Была вызвана функция get_message c параметрами (<socket.socket fd=6, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 7777), raddr=('127.0.0.1', 43122)>,), {}. Вызов из модуля common.utils 
-2022-04-03 18:10:42,000 - DEBUG - decos - Была вызвана функция send_message c параметрами (<socket.socket fd=6, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 7777), raddr=('127.0.0.1', 43122)>, {'response': 200}), {}. Вызов из модуля common.utils 
-2022-04-03 18:13:46,318 - DEBUG - decos - Была вызвана функция arg_parser c параметрами (), {}. Вызов из модуля __main__ 
+2022-05-09 17:24:12,677 - DEBUG - decos - Была вызвана функция arg_parser c параметрами ('7777', ''), {}. Вызов из модуля __main__ 
+2022-05-09 17:25:21,340 - DEBUG - decos - Была вызвана функция arg_parser c параметрами ('7777', ''), {}. Вызов из модуля __main__ 
+2022-05-09 17:27:06,959 - DEBUG - decos - Была вызвана функция arg_parser c параметрами ('7777', ''), {}. Вызов из модуля __main__ 
+2022-05-09 17:30:54,824 - DEBUG - decos - Была вызвана функция arg_parser c параметрами ('7777', ''), {}. Вызов из модуля __main__ 
+2022-05-09 17:32:03,463 - DEBUG - decos - Была вызвана функция arg_parser c параметрами ('7777', ''), {}. Вызов из модуля __main__ 
+2022-05-09 17:40:54,713 - DEBUG - decos - Была вызвана функция arg_parser c параметрами ('7777', ''), {}. Вызов из модуля __main__ 
+2022-05-09 17:41:44,815 - DEBUG - decos - Была вызвана функция arg_parser c параметрами ('7777', ''), {}. Вызов из модуля __main__ 
+2022-05-09 17:44:28,427 - DEBUG - decos - Была вызвана функция arg_parser c параметрами ('7777', ''), {}. Вызов из модуля __main__ 
+2022-05-09 17:45:51,091 - DEBUG - decos - Была вызвана функция arg_parser c параметрами ('7777', ''), {}. Вызов из модуля __main__ 
+2022-05-09 17:46:12,989 - DEBUG - decos - Была вызвана функция arg_parser c параметрами ('7777', ''), {}. Вызов из модуля __main__ 
+2022-05-09 17:46:13,581 - DEBUG - decos - Была вызвана функция get_message c параметрами (<socket.socket fd=20, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 7777), raddr=('127.0.0.1', 37462)>,), {}. Вызов из модуля common.utils 
+2022-05-09 17:46:36,264 - DEBUG - decos - Была вызвана функция arg_parser c параметрами ('7777', ''), {}. Вызов из модуля __main__ 
+2022-05-09 17:46:37,079 - DEBUG - decos - Была вызвана функция get_message c параметрами (<socket.socket fd=13, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 7777), raddr=('127.0.0.1', 37466)>,), {}. Вызов из модуля common.utils 
