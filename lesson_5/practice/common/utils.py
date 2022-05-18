@@ -1,10 +1,9 @@
 """Утилиты"""
 
-import sys
 import json
 from practice.common.variables import MAX_PACKAGE_LENGTH, ENCODING
-from practice.errors import IncorrectDataRecivedError, NonDictInputError
-from practice.decos import log
+from practice.common.errors import IncorrectDataRecivedError, NonDictInputError
+from practice.common.decos import log
 
 
 @log

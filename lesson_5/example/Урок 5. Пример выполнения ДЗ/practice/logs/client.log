@@ -860,3 +860,7 @@ om': 'test2', 'to': 'test1', 'time': 1564512031.3072023, 'mess_text': 'Как д
 2021-11-13 18:23:28,276 DEBUG decos.py Была вызвана функция get_message c параметрами (<socket.socket fd=17, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 49994), raddr=('127.0.0.1', 7777)>,) , {}. Вызов из модуля common.utils
 2021-11-13 18:23:29,747 DEBUG decos.py Была вызвана функция get_message c параметрами (<socket.socket fd=17, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 49996), raddr=('127.0.0.1', 7777)>,) , {}. Вызов из модуля common.utils
 2021-11-13 18:23:29,778 DEBUG decos.py Была вызвана функция get_message c параметрами (<socket.socket fd=17, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 49994), raddr=('127.0.0.1', 7777)>,) , {}. Вызов из модуля common.utils
+2022-05-18 14:24:04,632 INFO transport.py Попытка подключения №1
+2022-05-18 14:24:04,633 DEBUG transport.py Установлено соединение с сервером
+2022-05-18 14:24:04,633 DEBUG transport.py Сформировано presence сообщение для пользователя test1
+2022-05-18 14:24:09,635 CRITICAL transport.py Потеряно соединение с сервером!
